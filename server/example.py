@@ -11,7 +11,7 @@ class EmailAddress(db.Model):
 
     # validates("<column_name>") decorator, 
     @validates('email')
-    # key -> "email" () the key we want to validate
+    # key -> "email" is the key we want to validate
     # address -> the value of what we want to validate
     def validate_email(self, key, address):
         if '@' not in address:
@@ -21,6 +21,9 @@ class EmailAddress(db.Model):
     
     # validate multiple columns
     # @validates('email', 'backup_email')
+
+    # # key attr -> 'email' + 'backup_email', the columns we passed into the decorator
+
     # def validate_email(self, key, address):
     #     if '@' not in address:
     #         raise ValueError("Failed simple email validation")
